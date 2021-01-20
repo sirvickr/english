@@ -252,6 +252,7 @@ overview: An overview is a general description of a situation. "My brother gave 
 preview: A preview is an opportunity to see something before it is available to the public. "The band played us a preview of their new song."
 fantasy: A fantasy is a pleasant situation that people think about but is unlikely to happen. "Becoming an astronaut is a fantasy shared by many children."
 pioneer: A pioneer is a person who is the first to discover or be involved in something. "He was a pioneer of computer programming."
+decipher: To decipher writing is to figure out what it says. "My teacher complained that she couldn’t decipher my essay."
 
 
 telegraph: A telegraph is a method of sending electric messages on wires. "In the 1900s, the telegraph was the fastest way to send a message."
@@ -307,8 +308,6 @@ psychiatric: If something is psychiatric, then it is related to mental illness o
 personalize: To personalize something means to design it to meet a person’s unique needs. "He personalized the woman’s exercises to give her a better workout."
 freeway: A freeway is a road with no stops where cars travel at high speeds. "Once you get on the freeway, it only takes an hour to drive to my parent’s farm."
 advent: An advent is the arrival or beginning of an important person, thing, or event. "During the advent of radio, very few programs actually played music."
-foregoing - вышеупомянутый, the foregoing - вышесказанное
-decipher: To decipher writing is to figure out what it says. "My teacher complained that she couldn’t decipher my essay."
 спустя - hence
 whap - "бах"?
 
@@ -533,9 +532,10 @@ B2/C1 aluminium, С2/B1 tin - олово (pewter - оловянный), B2/С1 c
         metal is a strong material people use to build things. "Steel is a common metal that is used to build buildings."
         steel is a shiny gray metal. "The new apartment building was made with steel."
         brass is a metal that is used to make musical instruments and ornaments. "brass is used to make musical instruments like trumpets."
-B2/C1 ambassador (B1/C1 embassy), B2/C1 diplomat: An ambassador is a government worker who works in another country. "The ambassador from Korea was in charge of the conference."
-                                  				  An embassy is where government officials work in a foreign country. "If you lose your passport, you should contact the embassy."
-                                  				  A diplomat is a representative of a country who works with another country. "The Spanish diplomat discussed trade issues with officials in Peru."
+B2/C1 ambassador (B1/C1 embassy - посольство, consulate - консульство), B2/C1 diplomat:
+		An ambassador is a government worker who works in another country. "The ambassador from Korea was in charge of the conference."
+        An embassy is where government officials work in a foreign country. "If you lose your passport, you should contact the embassy."
+        A diplomat is a representative of a country who works with another country. "The Spanish diplomat discussed trade issues with officials in Peru."
 C2/-- ambiguous(ly) - неоднозначный, двусмысленный (that can be understood in more than one way; having different meanings), ambivalent, equivocal(formal) / unambiguous, unequivocal (formal) - однозначный, недвусмысленный (clear in meaning; that can only be understood in one way)
 C1/C1 amid, C1/A2 among: If something is amid something else, then it is in the middle of it. "The bee was busily flying amid the flowers in the garden."
                          If you are among certain things, they are all around you. "There was a red apple among green ones."
@@ -1317,9 +1317,10 @@ C1/C1 corruption, C1/-- bribe (подкуп, взятка)
 С1/-- cosmopolitan, C1/B2 ethnic(ity, ally), multicultural, see also: international: When a place is cosmopolitan, it is full of people from many different places. "There are dozens of different types of restaurants in a cosmopolitan city."
                                                         							 If something is ethnic, then it is related to a group with a similar culture. "Many sections of the city are home to different ethnic communities."
                                                         							 When something is multicultural, it relates to many different cultures. "Everyone was welcomed to attend the multicultural celebration."
-C2/C1 counsel(ling, lor), B1/B1 advise, B1/C1 guide(-ance) / C1/B2 consult: To advise someone is to tell them what to do. "My mother often advises people about their money.": 
-                                                            				To counsel someone is to listen and give advice about a problem. "The teacher counseled the girl about her troubles."
-																			To consult someone means to ask them for help. "I will consult my accountant to find a way to pay for my bills." (https://www.oxfordlearnersdictionaries.com/definition/english/consult?q=consult)
+C2/C1 counsel(ling, lor), B1/B1 advise (C1/-- adviser (also advisor)), B1/C1 guide(-ance) / C1/B2 consult (B2/B2 consultant):
+		To advise someone is to tell them what to do. "My mother often advises people about their money.": 
+        To counsel someone is to listen and give advice about a problem. "The teacher counseled the girl about her troubles."
+		To consult someone means to ask them for help. "I will consult my accountant to find a way to pay for my bills." (https://www.oxfordlearnersdictionaries.com/definition/english/consult?q=consult)
 B1/A2 count - считать (to say numbers in the correct order, to calculate the total number of people, things, etc. in a particular group)
 B2/B1 count - считаться, иметь значение (to have value or importance), see also: matter
 B2/B2 count - считаться, засчитываться (to be officially accepted; to accept something officially)
@@ -1743,7 +1744,7 @@ C2/C1 erupt(ion) - извергаться, volcano, lava: To erupt is for a volc
                                         	   lava is the hot substance made of melted rock that shoots from volcanoes. "The red hot lava poured from the volcano."
 --/C1 erupt(ion), break out - разразиться, вспыхнуть
 C1/B1 escape - побег. "They had a narrow escape (= only just avoided injury or death) when their car crashed."
-B1/B1 escape - сбежать, C1/C1 flee, fly, evade, B2/A2 avoid, shun, elude (C2/-- elusive(ly, ness)), avert, see also: bolt; dodge, shirk:
+B1/B1 escape - сбежать, C1/C1 flee, fly, evade, B2/A2 avoid, shun, elude (C2/-- elusive(ly, ness)), avert, see also: bolt; dodge, shirk, see also: slip, give sb the slip:
         To escape is to run away from something bad. "The butterfly could not escape from the cage."
         To flee means to run away from trouble or danger. "The crowd of men tried to flee from the danger."
         To avoid something is to stay away from it. "avoid the broken bottle on the floor."
@@ -2548,6 +2549,7 @@ B2/A2 lend - давать взаймы, see also: borrow
 C2/-- lend itself to sth - плдходить, поддаваться (​to be suitable for something): "The novel's complex, imaginative style does not lend itself to translation."
 C1/-- lengthen, C1/-- prolong, protract, see also: extend: To prolong means to make something last for a longer time. "Sandy walked slowly across the beach, trying to prolong her lunch break."
 C1/C1 lengthy, C1/-- prolonged, protracted, extended, drawn-out, C2 long
+C2/-- lenient - мягкий, снисходительный / severe, stringent, draconian
 C1/B2 level - уровень (rank in scale): "These are subjects for discussion at management level."
 B2/B1 level - уровень (the amount or number of something): "Inflation is going to rise two percent from its present level.":
 		A level is a point on a scale that measures something. "Please check the level of the temperature."
@@ -3327,7 +3329,7 @@ C1/-- rehearse (sth / for sth) - репетировать, see also: practise: T
 C1/C1 reign - период правления: A reign is the period of time in which a ruler rules. "The emperor’s reign lasted for only two years."
 C2/C1 reign - царствовать, править
 С2/-- reign - царить, властвовать: "At last silence reigned", "For a while, chaos and confusion reigned.", "Love reigned supreme in her heart." "The bomb attacks produced a panic which reigned over the city."
-C2/B1 relate, C2/B2 relative(ly, -ity), C1/B2 comparative - сравнительный, относительный, сравнимый, сопоставимый, kin - родня (kindred - родственный, clan), pertain (pertinent, see also: relevant):
+C2/B1 relate, C2/B2 relative(ly, -ity), C1/B2 comparative - сравнительный, относительный, сравнимый, сопоставимый, commensurate - соразмерный, сопоставимый (TODO / incommensurate), kin - родня (kindred - родственный, clan), pertain (pertinent, see also: relevant):
         To relate to something means to have a connection with it. "A company’s plan usually relates to how much profit it can make."
         A relative is a family member. "My relatives came by to see the new baby."
         relativity is a set of ideas about time and space developed by Albert Einstein. "relativity teaches that light travels at the same speed in the universe."
@@ -3576,7 +3578,7 @@ C2/-- scrap - отменить, отказаться, пересмотреть, 
 		To cancel means to decide that an event or a request will not happen. "She canceled the rest of her plans because of the rain."
 С2/-- scrap - избавиться, списать, утилизировать, see also: dispose of sb/sth, ditch
 C2/-- scrap - металлолом: "scrap iron/metal", "We sold our old car for scrap."
-C2/-- scrap - клочок, обрывок, bit, see also: dice, chip: A scrap of something is a small amount of it. "Chris liked to use many scraps of paper when thinking up ideas."
+C2/-- scrap - клочок, обрывок, bit, see also: dice, chip, slip: A scrap of something is a small amount of it. "Chris liked to use many scraps of paper when thinking up ideas."
         A bit is a small amount of something. "I ate a bit of chocolate before I went to bed."
       scrap (informal) - бороться; потасовка, see also: fight, scramble
 C2/-- script - алфавит, B1/-- alphabet
@@ -3723,8 +3725,19 @@ C1/C1 skip, C1/-- omit (omission) - (у|о|про)пустить: To skip someth
 													  An omission is something that has been left out or not done. "Mike was upset because of the omission of his name during the ceremony."
 --/C1 slash, gash, slit
 C1/-- sleepy, drowsy
-С2/B2 slip, C1/-- slippery (скользкий), slick: To slip means to slide and fall down. "The man slipped on the wet floor."
-                                               If something is slippery, it is wet or smooth and causes people to slip. "The repairman fell down on the floor because it was too slippery."
+С2/B2 slip - поскользнуться, соскользнуть, C1/-- slippery (скользкий), slick: To slip means to slide and fall down. "The man slipped on the wet floor."
+                                                                              If something is slippery, it is wet or smooth and causes people to slip. "The repairman fell down on the floor because it was too slippery."
+B1/B2 slip - выскальзывать, соскальзывать, сползать (to slide out of position or out of your hand): "Her hat had slipped over one eye.", "He could feel the rope slipping out of his grasp."
+C2/B2 slip - выскользнуть, ускользныть, улизнуть, проскользнуть, прокрасться, see also: creep, sneak: "She slipped out of the house before the others were awake.", "The ship slipped into the harbour at night."
+      slip - освободиться (to get free from, leave, or escape something), give sb the slip: "The ship had slipped its moorings in the night.", "The dog slipped its collar.", "The animal had slipped free and escaped.", see also: escape
+C2/B2 slip - (про)сунуть, вставить: "Anna slipped her hand into his.", "She slipped between the cool cotton sheets and was soon asleep.", "I managed to slip a few jokes into my speech.", "He slipped the ring onto her finger.", "They'd slipped some money to the guards."
+--/B2 slip - ухудшиться (to fall to a lower level; to become worse): "Productivity in the factory has slipped noticeably in the last year.", "The schedule has started to slip (= things are happening later than planned)."
+      slip - надеть/снять (to slip into/out of a dress, slip something + adv./prep.): "to slip your shoes on/off", "He slipped a coat over his sweatshirt."
+      slip - an act of slipping (sliding) or falling: "One slip meant a long tumble to the rocks below.", "One slip and you could fall to your death."
+      slip - погрязнуть, впасть ( to pass into a particular state or situation, especially a difficult or unpleasant one): "He began to slip into debt.", "The patient had slipped into a coma."
+      slip - оговорка, неточность (a small mistake, usually made by being careless or not paying attention), see also: a slip of the pen/tongue: "Freudian slip", "He recited the whole poem without making a single slip."
+      slip - листок бумаги, бланк (​a small piece of paper, especially one for writing on or with something printed on it), see also: scrap: "I wrote it down on a slip of paper.", "If you want to order a book fill out the green slip."
+      slip - элемент женского нижнего белья (​a piece of women’s underwear like a thin dress or skirt, worn under a dress)
 C2/B1 slow, B1/B2 delay, retard
 C2/B1 smooth: If something is smooth, it has no bumps. "The baby's skin felt very smooth."
 C2/C1 snap - вспылить, огрызнаться
@@ -3809,7 +3822,7 @@ C1/C1 spare - уделить (с трудом), C1/C1 sacrifice, A2/A1 share - �
                                                                              To sacrifice something valuable is to give it up to get something else. "Her parents sacrificed a lot of money in order for her to go to college."
 --/C1 spare - пощадить
 --/C1 spare - избавить: "Spare me of the tears over this 'martyr'"
-C1/C1 spare (no effort, expense, etc.), C2/C1 strive, C1/-- endeavor (see also: venture, crucible), B2/B2 attempt (see also: bid), C2/-- apply yourself, strain every nerve/sinew (to do sth), exert yourself, all out, all-out, full-scale - полномастштабный, крупномасштабный (TODO utter? extreme?):
+C1/C1 spare (no effort, expense, etc.), C2/C1 strive, C1/-- endeavor (UK endeavour, see also: venture, crucible), B2/B2 attempt (see also: bid), C2/-- apply yourself, strain every nerve/sinew (to do sth), exert yourself, all out, all-out, full-scale - полномастштабный, крупномасштабный (TODO utter? extreme?):
         To strive is to struggle to achieve something. "People who strive to succeed often do."
         An endeavor is an attempt to do something, especially something new or original. "The company’s new advertising endeavor ended in a horrible failure."
         To attempt something is to try to do that thing. "I am attempting to learn English."
@@ -4499,7 +4512,6 @@ B2/B2 affair - событие, see also: event: An affair is an event or a thing
 B2/B2 affair - дело, a state of affairs - состояние дел, see also: matter: "world/international affairs", "What I do in my spare time is my affair (= only involves me)."
 B2/B2 affair - роман, интрижка, love affair
 B1/B1 afford, --/B2 affordable: To afford something means you have enough money to pay for it. "I've been saving my money, so I can afford to buy a new bike."
-      aforementioned (formal) - вышеупомянутый, above-mentioned (formal), aforesaid (UK formal), said (LAW) / undermentioned (UK formal), following
       alienat, alienation - отчуждённость (the feeling that you have no connection with the people around you or that you are not part of a group)
       alienat, alienation - отчуждение, отталкивание (the act of making somebody less friendly towards you)
       alloy - сплав
@@ -4720,7 +4732,6 @@ A2/A2 colleague, co-worker; B2/B2 fellow: A colleague is somebody you work with.
 B2/B1 comment, B2/B2 remark, B2/B2 feedback: To comment means to say something that shows your personal opinion. "Tom commented on the poor quality of the food."
                                              To remark is to say something. "The teacher remarked on how quickly the students were learning."
                                              feedback is comments to a person about how they are doing something. "I asked my boss for feedback on my work."
-      commensurate - соразмерный, сопоставимый / incommensurate
       communal(ly) - общинный
       communal(ly) - общий, общественный, совместный, shared: If something is communal, it involves a group of people. "On the weekends, Theo and his son picked up trash in the communal park."
       compartment - отсек, отделение
@@ -4893,9 +4904,9 @@ B2/B1 express oneself - (само)выражать(ся), проявлять с�
       extort(ion) - вымогать, extortionate(ly) - грабительский, exorbitant - чрезмерный
       facetious(ly, ness) - неуместно шутливый, flippant(ly), tongue in cheek, tongue-in-cheek
 B2/A2 factor: A factor is something that has an effect on the way another thing happens. "Smoking is the main factor that causes lung cancer."
-B2/B2 fail(ed, ure), err (formal): To fail means you do not succeed in what you try to do. "Since he failed to get the job, he was sad."
-                                   A failure happens when you do not do something right. "My cooking ended in failure because I burned the food."
-                                   To err means to make a mistake. "The pilot erred in his estimate of the time it would take to make the trip."
+B2/B2 fail(ed, ure), err (formal), see also: slip up: To fail means you do not succeed in what you try to do. "Since he failed to get the job, he was sad."
+                                                      A failure happens when you do not do something right. "My cooking ended in failure because I burned the food."
+                                                      To err means to make a mistake. "The pilot erred in his estimate of the time it would take to make the trip."
 B2/-- faint, B2 pass out: To faint means to go unconscious and fall down. "Carol fainted because she hadn't eaten in over a day."
       falter(ing(ly))
       farewell - прощание: A farewell is an instance of saying goodbye or a way to say it. "She got on the plane after we said our farewells."
@@ -4953,6 +4964,7 @@ B2/B2 forbid, B2/B2 prohibit, B2/B1 ban: To forbid is to tell someone they canno
                                          To ban something is to not let people do it. "Smoking is banned in this building."
       forcible(-y)
 B1/B2 forecast, prognosis: A forecast is an idea about what the weather will be like in the future. "The forecast says that it will rain all week."
+      foregoing - вышеупомянутый, the foregoing - вышесказанное, aforementioned (formal) - вышеупомянутый, above-mentioned (formal), aforesaid (UK formal), said (LAW) / undermentioned (UK formal), following
 A2/A2 fork - вилка, вилы, развилка; 
       fort: A fort is a small building that is specially built to defend an area from attack. "When the army arrived, they built a big fort on the top of the hill."
 B2/B2 fortunate(ly) / B2/B2 unfortunate(ly), hapless(ly), alas (увы): If you are fortunate, you are lucky. "I was fortunate to get a seat."
@@ -5144,6 +5156,9 @@ B2/-- mist, A2/-- fog, haze, B2/B2 steam, vapour (US vapor): mist is water that 
                             								 fog is a thick cloud that is near the ground or water. "I did not want to drive in the thick fog."
 															 steam is water that has become hot and has turned into a misty gas. "We could see the steam rise from the boiling water."
       module, modular
+      moor - пришвартоваться, tie up
+      mooring - место швартовки (the place where a ship or boat is moored): "private moorings", "to find a mooring"
+      moorings - швартовы = "mooring ropes" (the ropes, chains, etc. by which a ship or boat is moored): "The boat slipped its moorings and drifted out to sea.", "The crowds cheered as the great ship slipped her moorings and slid out into the Atlantic."
       mortal - смертельный (enemy, combat, danger, threat, etc.)
 B2/B2 motivation, B2/B2 enthusiasm: enthusiasm is a very strong good feeling about something. "The crowd showed their enthusiasm for the soccer team by cheering loudly."
       motley
