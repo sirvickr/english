@@ -259,8 +259,6 @@ TODO input - contribution; contribute = bring sth to the party/table: input is i
 																	  see also: donate, gift
 magnet: A magnet is a piece of iron or other material which attracts iron toward it. "I used a magnet to pick up the nails that were scattered on the floor."
 clone: A clone is an identical copy of a living creature. "Scientists recently made a clone of a sheep."
-overview: An overview is a general description of a situation. "My brother gave me an overview of the important parts of the book."
-preview: A preview is an opportunity to see something before it is available to the public. "The band played us a preview of their new song."
 fantasy: A fantasy is a pleasant situation that people think about but is unlikely to happen. "Becoming an astronaut is a fantasy shared by many children."
 pioneer: A pioneer is a person who is the first to discover or be involved in something. "He was a pioneer of computer programming."
 decipher: To decipher writing is to figure out what it says. "My teacher complained that she couldn’t decipher my essay."
@@ -829,8 +827,8 @@ C1/B1 campaign, crusade
 --/C1 canvas
 C2/C1 capitalism (capitalist) / communism / socialism: capitalism is an economic system where private companies make goods for profit. "Most industries in the world today are based on capitalism."
                                                        A capitalist is a business person who invests in trade and industry for profit. "The capitalist invested in a factory that made wheat into cereal."
-C1/B2 capture, B2/B2 trap, apprehend (apprehension): To capture someone or something is to catch them. "James tried to capture the bubbles in his hands."
-                                                     To trap people or animals is to capture them so they cannot get away. "We trapped butterflies in a net."
+C1/B2 capture, B2/B2 trap, apprehend (apprehension), round sb <-> up: To capture someone or something is to catch them. "James tried to capture the bubbles in his hands."
+                                                                      To trap people or animals is to capture them so they cannot get away. "We trapped butterflies in a net."
 C2/C1 cargo, B2/B2 load, payload, shipment, consignment, freight: cargo is the items carried by a ship or airplane. "The cargo of the ship got wet when it started raining."
                                                                   To load is to put objects into something. "The man loaded the boxes into a truck."
                                                                   freight is a set of items carried on a train, boat, or airplane. "Trade ships only carried valuable freight like silk and spices."
@@ -1091,7 +1089,7 @@ C1/-- compatible(-ly, -ility) / incompatible: When things are compatible, they w
 --/C1 compelling - убедительный, неопровержимый, C2/-- conclusive (see also: decisive), C1/-- undeniable, C2/-- indisputable, unquestionable, unarguable (formal), irrefutable (formal) / inconclusive, C2/-- questionable, deniable, disputable, arguable (formal), debatable
 --/C1 compelling - непреодолимый, C2/-- compulsive(ly, ness), inveterate - заядлый, закоренелый, неудержимый, see also: avid
 --/C1 compelling, C1/-- gripping, C2/-- compulsive(ly, ness), B2/B1 fascinating, absorbing, engrossing, riveting, enchanting, enthralling, bewitching - захватывающий, увлекательный, завораживающий: 
-C1/C1 compile, C2/C1 assemble (see also: summon), congregate, B2/B2 compose, see also: combine / disassemble, dismantle:
+C1/C1 compile, C2/C1 assemble (see also: summon, round sb/sth <-> up), congregate, B2/B2 compose, see also: combine / disassemble, dismantle:
 		To compile things means to collect a variety of them into a group. "She compiled a list of people who she wanted to attend her birthday party."
         To assemble means to get together in one place. "The parents assembled to discuss ways to improve their children’s education."
         To compose something is to make it from smaller parts. "Tonya composed her report using many sources of information."
@@ -1170,8 +1168,8 @@ B2/C1 congratulate: To congratulate someone is to tell them that you are happy f
 --/C1 confer - вручать, bestow: "He bestowed public buildings and river improvements in return for votes"
 C1/-- confidential(ly), confidence, secrecy, secret: secrecy is the behavior of keeping things secret. "The secrecy of the big organization made the government nervous."
 													 If something is confidential, it must be kept secret. "The information from the meeting is confidential."
-C2/C1 confine, --/C1 detain; B2/B1 arrest, apprehend: To confine something is to keep it in one place. "The elephant is confined to a cage in the zoo."
-                                                      To arrest someone means to catch them for doing something bad. "The man was arrested for breaking the law."
+C2/C1 confine, --/C1 detain; B2/B1 arrest, apprehend, see also: capture, round sb <-> up: To confine something is to keep it in one place. "The elephant is confined to a cage in the zoo."
+                                                                                          To arrest someone means to catch them for doing something bad. "The man was arrested for breaking the law."
 B2/C1 confirmation (B2/B1 confirm), verification (C1/C1 verify), ascertain (formal): To confirm is to make sure something is correct. "Winning the game confirmed that James was a good player."
                                                                                      To verify means to find out if something is true. "Julian called the movie theater to verify that the movie started at nine."
 C2/C1 confront(ation), B2/C1 tackle, C2/B1 face, B2/B2 approach, B1/B1 deal with sth, contend with sth, see also: address, cater, fulfil:
@@ -2990,6 +2988,7 @@ C2/B2 overnight: When something happens overnight, it happens during the night. 
 --/C1 overturn - перевернуть, invert (formal) - перевернуть, capsize (to (cause a boat or ship to) turn upside down by accident while on water): To invert something means to turn it upside down. "He inverted the bicycle to make repairs on the wheels."
 --/C1 overturn - отменить
       overturn - опровергнуть, see also: refute, disprove, dismiss
+C1/-- overview - обзор, обозрение, see also: summary, round-up: An overview is a general description of a situation. "My brother gave me an overview of the important parts of the book."
 C1/C1 overwhelm (охватить, переполнить), C2/B2 overcome (охватить, переполнить): To overwhelm is to exist in such a large amount that someone cannot deal with it. "The amount of homework her teacher assigned has overwhelmed her."
 C1/C1 overwhelm (подавить, одолеть), C1/B2 beat, C2/B2 overcome, B2/B2 defeat (see also: subdue), overpower (подавлять, пересиливать), see also prevail, exceed
 C2/C1 outlet
@@ -4159,7 +4158,7 @@ C2/C1 summit (MEETING), C2/C1 assembly, C2/C1 consultation, C1/C1 gathering, C2/
         A reunion is the meeting of people or things that have been separated. "Every summer we have a family reunion at the lake."
         A session is a meeting at a regular time in order to discuss and solve an issue. "Every three months the managers met in a session to discuss regional sales."
         congress is a group of leaders in a government. "congress makes laws for people to follow."
-C2/-- summon - созвать (собрание), convene (formal), see also: assemble
+C2/-- summon - созвать (собрание), convene (formal), see also: assemble, round sb/sth <-> up
 C2/-- summon - призвать, вызвать, запросить (подкрепление, поддержку, кого-либо): To summon a person is to ask them to come to you. "We summoned the doctor as soon as we noticed she was sick."
 C2/-- summon - призвать (всё своё мужество), набраться (смелости), muster - gather or bring together ("Yet Fox needed all the strength that he could muster.")
 C2/-- superficial - поверхностный (see also shallow), facile
@@ -4320,6 +4319,9 @@ B2/С1 trail - тропа, C2/A2 route, B2/B1 path, shortcut, approach: A trail 
                                                         		  A path is a way from one place to another that people can walk along. "We followed a path through the woods."
                                                         		  A shortcut is a route that is shorter than the main route. "We got to the house first because we took a shortcut through the forest."
 TODO trail (connect with track and trace)
+--/C1 trailer - прицеп (a truck, or a container with wheels, that is pulled by another vehicle): "a car towing a trailer with a boat on it"
+--/C1 trailer - дом на колёсах (also travel trailer, UK caravan, mobile home): "a trailer park (= an area where trailers are parked and used as homes)"
+--/C1 trailer (UK) - трейлер (a series of short scenes from a film or television programme, shown in advance to advertise it): "He featured in the trailer for the movie.", "The review said that if you've seen the trailer, you needn't bother watching this film."
 C1/-- trainee - стажёр, apprentice - подмастерье: An apprentice is a person who learns how to do a job from a skilled person. "Mark is an apprentice chef at the restaurant."
 C2/-- tranquil
 C1/C1 transaction, B2/B1 deal: A transaction is an act of buying or selling something. "Because the clerk was new at the job, the simple transaction took a long time."
@@ -5458,6 +5460,11 @@ B1/B2 pregnant: When a female is pregnant, she is going to have a baby. "The pre
       preoccupy, preoccupied, 
 B1/A1 prepare - (при|под)готовить(ся), see also: groom: To prepare is to get ready for something. "I prepared my speech to the class."
       presumptuous(ly, ness) - самонадеянный (​too confident, in a way that shows a lack of respect for other people: a person who is presumptuous shows little respect for others by doing things they have no right to do), see also: arrogant: "It would be presumptuous of me to comment on the matter.", "Would it be presumptuous of me to ask to borrow your car?"
+      preview - превью, sneak preview: A preview is an opportunity to see something before it is available to the public. "The band played us a preview of their new song."
+      preview - предпросмотр (a chance to see what something will be like before it happens or is shown): "Click on the print preview button."
+      preview (US) - трейлер, see also: trailer (UK)
+      preview - предварительно обозревать/ознакомить (to give sb a short account of sth that is going to happen, be studied, etc.): "The professor previewed the course for us.", "On page 11, Sally Gaines previews next week's movies on TV."
+      preview - предварительно демонстрировать(ся): "The exhibition was previewed in last week's issue.", "Miller's new play is previewing (= being performed publicly before it officially opens) at the Theatre Royal tomorrow."
 B2/B2 pride, B1/B1 proud; B2 take pride in sth/sb - to feel very pleased about something or someone you are closely connected with: "If you don't take professional pride in your work, you're probably in the wrong job." 
         When you have pride, you are happy with yourself. "I take pride in getting good grades."
         If someone feels proud, they are happy about what they have done. "She is proud of the picture she drew of her house."
@@ -5558,6 +5565,10 @@ A2/A2 roof: A roof is the outside top part of a building. "The roof was covered 
       roundabout - окольный, see also: indirect, bypass
       roundabout (UK) - участок дооги с круговым движением, traffic circle, see also: rotary
 TODO roundabout
+      round sb/sth <-> up - собрать (​to find and gather together people, animals or things), see also: assemble, summon: "I rounded up a few friends for a party.", "The cowboys rounded the cattle up.", "The cattle are rounded up in the evenings."
+      round sb <-> up - задержать (​if police or soldiers round up a group of people, they find them and arrest or capture them), see also: capture, detain: "A number of suspects were rounded up and questioned."
+      round-up - сводка, обзор (a summary of the most important points of a particular subject, especially the news), see also: overview, summary: "a news round-up", "We'll be back after the break with a round-up of today's other stories.", "This week’s issue includes a round-up of the latest record releases."
+      round-up - облава, отлов (an act of bringing people, animals, things, etc. together for a particular purpose): "the round-up of sheep for shearing", "The police carried out their usual round-up of Saturday night drunks.", "The president ordered the round-up and imprisonment of all opposition politicians."
       rouse, rousing
 B2/B1 row: A row is a line of things. "James put all of his toy soldiers into neat rows."
 B2/-- rust(y): rust is a red and brown coating on iron objects caused by water and air. "The old metal gate would not swing because the hinges were covered in rust."
@@ -5760,6 +5771,9 @@ TODO stream, see also: current, flow
 B1/-- surf: To surf means to use a special board to ride on waves in the ocean. "The students went to the beach to surf during their vacation."
 B2/A2 succeed, fare, get on​ (also get along): To succeed is to complete something that you planned or tried to do. "He will continue to work on the robot until he succeeds."
       sulphur - сера
+      summary - сводка, резюме, краткое изложение (a short, clear description that gives the main facts or ideas about something), see also: overview, round-up: "a news summary", "The following is a summary of our conclusions.", "He has provided a useful summary of the main categories."
+      summary - итог (in summary - таким образом, в общем, короче): "In summary, they decided against the proposal.", "In summary, this was a disappointing performance."
+      summary - поспешный, внесудебный (done suddenly, without discussion or a legal process): "summary arrest/dismissal/execution", "a summary judgement"
       suppository - свеча (ректальная)
       swamp, marsh: A swamp is a very wet area of land. "There are lots of wild animals living in the swamp."
       				A marsh is a type of wet land covered with grasses and short plants. "The marsh looked so lovely against the mountains."
