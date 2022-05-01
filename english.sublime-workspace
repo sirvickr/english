@@ -3,153 +3,67 @@
 	{
 		"selected_items":
 		[
+			[
+				"choose",
+				"choosegame"
+			],
+			[
+				"myn",
+				"mynumber2"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/acenter.conf/sad.geo.xml",
-			"settings":
-			{
-				"buffer_size": 37047,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/geo.ini",
-			"settings":
-			{
-				"buffer_size": 5563,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/home/pheodor/Private/xx.txt",
 			"settings":
 			{
-				"buffer_size": 79721,
+				"buffer_size": 83071,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "4fccab7d fix-[1091]: fix getResult duplicates removing\n\ngit@gitlab.stc-spb.ru:QBox/detectorcore.git\n\n",
+			"contents": "#include \"fpga_iface.h\"\n\n#include \"board/fpga_map.h\"\n\n#include \"system/diagnostic.h\"\n\nFpgaIface::FpgaIface(uint32_t moduleId) : moduleId(moduleId) {\n\tcontrolRegs = static_cast<ControlRegs *>(FpgaMap::Locate().GetUserRegs((FpgaMap::ModuleId)moduleId));\n\tif (controlRegs == nullptr) {\n\t\tSystem::Diagnostic::Locate().SendSoftwareError(\"FPGA firmware does not contain module fb_multitask\");\n\t}\n\n\t//\tcontrolRegs->control.fields.clear = true;\n}\n\n// void FpgaIface::setLocalDisable()\n//{\n//\tcontrolRegs->control.fields.enable = false;\n//\tcontrolRegs->control.fields.clear = true;\n//}\n// void FpgaIface::setLocalEnable()\n//{\n//\tcontrolRegs->control.fields.clear = false;\n//\tcontrolRegs->control.fields.enable = true;\n//}\n// void FpgaIface::setSwitchCodes(const uint8_t* codes, size_t count)\n//{\n//\tauto gpioRegs = FpgaMap::Locate().GetGpioReg();\n//\tcontrolRegs->swControl.count = count;\n\n//\tfor(size_t i = 0; i < count; ++i) {\n//\t\tCodeCommand command;\n//\t\tcommand.cmd.addr = i;\n//\t\tcommand.cmd.value = codes[i];\n//\t\tcommand.cmd.done = (i == (count - 1));\n\n//\t\tcontrolRegs->swControl.control = command.data;\n//\t}\n//\tgpioRegs->pinMuxControl = 0x00000000; // disable manual control\n//}\nuint32_t FpgaIface::getdataFormat() const { return controlRegs->descr.data_format; }\n\nuint32_t FpgaIface::getStripFs() const { return controlRegs->descr.stripFs; }\n\nvoid FpgaIface::setBandCount(uint32_t bandCount) { controlRegs->descr.bandCount = bandCount; }\nuint32_t FpgaIface::getBandCount() const { return controlRegs->descr.bandCount; }\nvoid FpgaIface::setRawChanNum(uint32_t rawChanNum) { controlRegs->control.rawChanNum = rawChanNum; }\n// uint32_t FpgaIface::getChanCount() const\n//{\n//\treturn controlRegs->descr.chanCount;\n//}\n\nuint32_t FpgaIface::getRawChanNum() const { return controlRegs->control.rawChanNum; }\nvoid FpgaIface::startProc() {\n\tcontrolRegs->control.fields.clear = 0;\n\tcontrolRegs->control.fields.enable = 1;\n}\n\nvoid FpgaIface::set12500Mode() { controlRegs->control.fields.stepMode = 1; }\n\nvoid FpgaIface::set25000Mode() { controlRegs->control.fields.stepMode = 0; }\n\nvoid FpgaIface::stopProc() {\n\tcontrolRegs->control.fields.enable = 0;\n\tcontrolRegs->control.fields.clear = 1;\n}\n",
+			"file": "/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/fpga_iface.cpp",
+			"file_size": 2179,
+			"file_write_time": 132772137499151045,
 			"settings":
 			{
-				"buffer_size": 101,
+				"buffer_size": 2179,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "16.09.2021\n\nпользовательские модули gsm487_comb 13009 и gsm487_lpf 13008\n\n13008 \"сырой поток\"  ЧД 121.875 МГц полоса 100 МГц,\n0 регистр -- выбор канала от 0 до 7\n\n13009 \"расфильтровка\" каналы ЧД 13/24 МГц  полоса 14/48 МГц\nрегистры 0-6 сейчас не используются, они от антенного коммутатора, (нужен он будет?),  регистры с 7 по 7+31 это отстройки 32 частот на ЧД 121.875 МГц полосе +-50 МГц\nна выходе 16битные iq без дескрипторов и заголовоков\n fpga_bdp_gsm487_1321091501.bit (18.60 МБайт) \n LMX_487_5MHz_NoSysref_200PD.svh (1.55 КБайт) \n\n\n\n21.09.2021\n\nВерсия со скипователем и антенным коммутатором\nрегистры gsm487_comb\n0 CTRL  сейчас используется только 0 бит, значение 1 -- запись в фифо 8 каналов ацп, 0 -- запись одного канала, который в module id 12 (ddc) скоммутирован в нулевой канал\n1-4 настройка коммутатора, как он точно работает, можно уточнить у Андрея Таусинова или Михаила Ляшука (вероятно)\n1 COMMAND\n2 PERIOD -- время sw_code, считается во фреймах (13/24 МГц),  из-за особенностей имплементации 0 (по умолчанию) это максимальное время фрейма (около часа)\n3 SW_CONFIG_NUM\n4 FRAMES_SKIP -- количество фреймов, которые нужно пропустить после изменения кода коммутатора, т.к. данные в трактах децимации во время перестраивания некорректны. \n  По умолчанию 1 (т.к.начальные некорректные данные пропускаются отдельно), но эквивалентная длина фильтра примерно 17 фреймов, так что меньше выставлять при работе \n  с коммутатором черевато искажением данных в начале записи\nрегистр 5 не используется\nрегистр 6 -- количество полос в посылке (от 0 до 32, при 0 данные не идут, по умолчанию 32)\nрегистры 7...38 частоты подстройки полос (32 бита, ЧД 121.875 МГц, то есть отстройка на 1 МГц будет 2^32*1/23.04 = 0x0219BB35, по умолчанию 0)\n",
+			"settings":
+			{
+				"buffer_size": 1738,
 				"line_ending": "Unix",
-				"name": "4fccab7d fix-[1091]: fix getResult duplicates remo"
-			}
-		},
-		{
-			"file": "vocab/animals",
-			"settings":
-			{
-				"buffer_size": 3149,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/plants",
-			"settings":
-			{
-				"buffer_size": 2540,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/food",
-			"settings":
-			{
-				"buffer_size": 1191,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/body",
-			"settings":
-			{
-				"buffer_size": 2243,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/med",
-			"settings":
-			{
-				"buffer_size": 3054,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/idioms",
-			"settings":
-			{
-				"buffer_size": 72053,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vocab/words",
-			"settings":
-			{
-				"buffer_size": 742954,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pheodor/Private/Eng/Vocabulary/words-TOEFL",
-			"settings":
-			{
-				"buffer_size": 94323,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "But there are some detail, that are quite dated, be it in character design, narrative tropes, or even in the set detailing.",
-			"file": "/home/pheodor/Private/Eng/Vocabulary/phrases",
-			"file_size": 0,
-			"file_write_time": 132542285697328771,
-			"settings":
-			{
-				"buffer_size": 123,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pheodor/Private/Eng/Vocabulary/plenty",
-			"settings":
-			{
-				"buffer_size": 7251,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "People tend to gravitate toward towns and cities since the beginning of 20th century, as a result of a rapid industrialisation process, and this drift still keeps going. However, some inhabitants of contemporary cities are inclined to opt for the contrary and move to the rural communities seeking seclusion and privacy. So what are the pros and cons of modern city lifestyle in comparison with living in the countryside?\nLiving in a big city implies plenty of opportunities - employment opportunities, excellent shopping, diverse range of foods, lively festivals and concerts and a great deal of other facilities, both for work and recreation. Basically, one can earn a good deal of money - it depends on their abilities and motivation - and spend them in a lot of possible ways. Moreover, as all individuals are unique, big cities provide a lot of good chances for self-realisation. For instance, physically developed people can find their way in life attending various sportschools and build a career of a famous football player or a basketball star etc. Someone with a faculty for music can earn their living in theatres or concert halls, intellectuals with keen and insightful minds can become prominent scientists.\nAt the same time, such a highly vigorous lifestyle may be not suitable for everyone. Many of us strongly dislike constant fuss of big cities, frantic traits of which - such as noise pollution, traffic jams, crowded streets and a high crime rate - make them bitterly unhappy. Contrary to the urban lifestyle, living in the countryside is remarkable for its leisurely, relaxed pace of life. People who are not disposed to earning a lot of money and catching every opportunity in life usually prefer living in the rural regions and tend to opt for calm ambience, proximity to nature and healthy - yet not various - nutrition.\nOverall, exuberant people tend to opt for a highly energetic urban lifestyle whilst calm or maybe unambitious individuals prefer a relaxed lifestyle of rural communities. As for me, I am ready to tolerate the hectic lifestyle of the big city I live in, in order to have a handful of its opportunities for self development and to earn for living. I have a nearly tangible sensation of the potent energy of its heart, the power of which I harness every day to move further and further.\n",
-			"file": "/home/pheodor/Private/Eng/Skyeng/essay1.txt",
-			"file_size": 2329,
-			"file_write_time": 132532885296481890,
-			"settings":
-			{
-				"buffer_size": 2328,
-				"line_ending": "Unix"
+				"name": "16.09.2021"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -179,6 +93,97 @@
 	},
 	"file_history":
 	[
+		"/home/pheodor/Private/Eng/Skyeng/essay1.txt",
+		"/home/pheodor/Private/Eng/Vocabulary/plenty",
+		"/home/pheodor/Private/Eng/Vocabulary/phrases",
+		"/home/pheodor/Private/Eng/Vocabulary/conversant",
+		"/home/pheodor/Private/Eng/Vocabulary/words-TOEFL",
+		"/home/pheodor/Private/english/vocab/quiz",
+		"/home/pheodor/Private/english/vocab/words",
+		"/home/pheodor/Private/english/vocab/idioms",
+		"/home/pheodor/Private/english/vocab/med",
+		"/home/pheodor/Private/english/vocab/body",
+		"/home/pheodor/Private/english/vocab/food",
+		"/home/pheodor/Private/english/vocab/plants",
+		"/home/pheodor/Private/english/vocab/animals",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Include/GsmConst.h",
+		"/home/pheodor/Work/build/qmainsdr/UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Debug/UhfSignal/binaries/mainconfigplay.ini",
+		"/home/pheodor/Private/coursera/C++/YellowBelt/4/population/readme.txt",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/CMakeLists.txt",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/SpectrumProcessor.cpp",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/GsmTask.cpp",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/GsmRawDataProcessor.cpp",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/GsmQueryCreator.cpp",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/GsmInit.cpp",
+		"/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/GsmFilterBankProcessor.cpp",
+		"/home/pheodor/Private/coursera/Python/2. OOP/2. Object Oriented Programming /class_hierarchy/classes.py",
+		"/home/pheodor/Private/coursera/Python/2. OOP/2. Object Oriented Programming /class_hierarchy/readme.txt",
+		"/home/pheodor/bash-playground/do",
+		"/home/pheodor/bash-playground/game",
+		"/home/pheodor/Private/coursera/C++/RedBelt/3/object_pool/object_pool.cpp",
+		"/home/pheodor/Private/coursera/C++/RedBelt/3/object_pool/readme.txt",
+		"/home/pheodor/Private/docs/Лена/id.txt",
+		"/home/pheodor/Work/build/qmainsdr/UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Debug/UhfSignal/binaries/profiles/chrome",
+		"/home/pheodor/Work/build/qmainsdr/UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Debug/UhfSignal/binaries/settings/uhfsignal_debug.xml",
+		"/home/pheodor/Work/build/qmainsdr/UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Debug/UhfSignal/binaries/settings/uhfsignal.xml",
+		"/home/pheodor/Work/temp.cpp",
+		"/home/pheodor/Work/temp/3/main.cpp",
+		"/home/pheodor/Work/temp/3/3/main.cpp",
+		"/home/pheodor/Work/temp/3/2/main.cpp",
+		"/home/pheodor/Work/temp/2.cpp",
+		"/home/pheodor/Work/temp/1.cpp",
+		"/home/pheodor/TEMP/3",
+		"/home/pheodor/TEMP/2",
+		"/home/pheodor/TEMP/1",
+		"/home/pheodor/TEMP/0",
+		"/home/pheodor/Work/qmainsdr/cmake/UhfSignalDefs.cmake",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/phantom/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/phantom/test/config/conf.cmake",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/test/GeoTest.cpp",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/phantom/test/PhantomTest.cpp",
+		"/home/pheodor/Work/qmainsdr/libs/appfactory/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/test/main.cpp",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/test/config/conf.cmake",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/geo.cpp",
+		"/home/pheodor/Work/project/signal/acenter.conf/MPI2GReo.prf.xml",
+		"/home/pheodor/Work/qmainsdr/libs/pluginmessage/include/pluginmessage/geomessage.h",
+		"/home/pheodor/Work/project/signal/acenter.conf/GeoService.prf.xml",
+		"/home/pheodor/Work/qmainsdr/libs/geo/geosvc/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/outlets/CMakeLists.txt",
+		"/home/pheodor/Work/logs/pw_dmr_log_8.txt",
+		"/run/user/1000/gvfs/ftp:host=mpi3ch8,user=at/home/at/geotest/acenter.conf/sad.GeoPushUdpToUninav.xml",
+		"/run/user/1000/gvfs/ftp:host=mpi3ch8,user=at/home/at/main.sync/acenter.conf/sad.geo.xml",
+		"/home/pheodor/Work/qmainsdr/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/geo/geocore/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/network/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/geo/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/tasks/ftdtask/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/plugins/logic/geo/geo.h",
+		"/home/pheodor/Work/qmainsdr/libs/network/NetworkLoadRestrictor/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/network/Rotator/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/ConfigSettings/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/proc/primary/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/proc/primary/lte/LteCore/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/proc/primary/ftd/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/tasks/ftdtask/ftdtask.cpp",
+		"/home/pheodor/Work/project/signal/acenter.conf/sad.GeoPushUdpToTcpUninav.xml",
+		"/home/pheodor/Work/qmainsdr/libs/base/logger/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/DistributorId/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/settings/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/Threading/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/tinyxml/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/base/Common/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/transport/StcXmlParsing/CMakeLists.txt",
+		"/home/pheodor/Work/qmainsdr/libs/transport/CMakeLists.txt",
+		"/home/pheodor/Work/qmainconf/integr/mainconfig.ini",
+		"/home/pheodor/Work/qmainsdr/libs/processLibraries/Level1NativeLibSo/appFactory/CMakeLists.txt",
+		"/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/geo.ini",
+		"/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/acenter.conf/sad.geo.xml",
+		"/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/kernel.ini",
+		"/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/logger-off.ini",
+		"/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/geo-common.ini",
 		"/home/pheodor/Work/qmainsdr/libs/tasks/signaltask/CMakeLists.txt",
 		"/home/pheodor/Work/qmainsdr/cmake/QBoxDefs.cmake",
 		"/home/pheodor/Work/qmainsdr/cmake/TasksDefs.cmake",
@@ -211,29 +216,11 @@
 		"/home/pheodor/Work/qmainconf/l410/mainconfig.ini",
 		"/home/pheodor/Work/qmainconf/l410/mainconfigdump.ini",
 		"/home/pheodor/Work/qmainconf/l410/mainconfigplay.ini",
-		"/home/pheodor/Work/qmainconf/integr/mainconfig.ini",
 		"/home/pheodor/Work/qmainconf/integr/mainconfigdump.ini",
 		"/home/pheodor/Work/qmainconf/integr/mainconfigplay.ini",
 		"/home/pheodor/Work/qmainconf/fairway/mainconfigclb.ini",
 		"/home/pheodor/Work/qmainconf/fairway/mainconfigdump.ini",
-		"/home/pheodor/Work/qmainconf/fairway/mainconfigplay.ini",
-		"/home/pheodor/Work/qmainconf/beez40/mainconfig.ini",
-		"/home/pheodor/Work/qmainconf/beez40/mainconfigdump.ini",
-		"/home/pheodor/Work/qmainconf/beez40/mainconfigplay.ini",
-		"/home/pheodor/Work/qmainconf/arcade/mainconfigdump.ini",
-		"/home/pheodor/Work/qmainconf/arcade/mainconfigplay.ini",
-		"/home/pheodor/Work/qmainconf/arcade/mainconfigsky.ini",
-		"/home/pheodor/Private/Eng/Skyeng/essay1.txt",
-		"/home/pheodor/Private/Eng/Skyeng/essay2.txt",
-		"/home/pheodor/repos/qmainsdr/cmake/build-UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Release/UhfSignal/binaries/logtest.ini",
-		"/home/pheodor/repos/qmainsdr/cmake/build-UhfSignal-Desktop_Qt_5_14_1_GCC_64bit-Release/UhfSignal/binaries/mainconfigplay.ini",
-		"/home/pheodor/Private/english/vocab/animals",
-		"/home/pheodor/Private/english/vocab/plants",
-		"/home/pheodor/Private/english/vocab/food",
-		"/home/pheodor/Private/english/vocab/body",
-		"/home/pheodor/Private/english/vocab/med",
-		"/home/pheodor/Private/english/vocab/idioms",
-		"/home/pheodor/Private/english/vocab/words"
+		"/home/pheodor/Work/qmainconf/fairway/mainconfigplay.ini"
 	],
 	"find":
 	{
@@ -251,138 +238,138 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"plague",
-			"tailor",
-			"accommodate",
-			"adapt",
-			"tailor",
-			"commission",
-			"assign",
-			"commission",
-			"offence",
-			"crumpet",
-			"litter",
-			"brood",
-			"offspring",
-			"litter",
-			"garbage",
-			"litter",
-			"sustenance",
-			"live off",
-			"thorough",
-			"careful",
-			"attentive",
-			"close",
-			"closely",
-			"scrupulous",
-			"скрупул",
-			"скрупулезно",
-			"скрупулёзно",
-			"tight",
-			"close",
-			"closely",
-			"stagger",
-			"amaze",
-			"stun",
-			"awe",
-			"stun",
-			"stunned",
-			"abundant",
-			"ample",
-			"prodigal",
-			"squabble",
-			"conflict",
-			"squabble",
-			"squall",
-			"wail",
-			"shrill",
-			"scream",
-			"wail",
-			"unrest",
-			"Janet",
-			"Claire",
-			"substantial",
+			"pfr",
+			"gitlab",
+			"self-",
+			"looking back",
+			"retrospect",
+			"dilute",
+			"indeed.com",
+			"hose",
+			"decisive",
+			"sima",
+			"overpopulat",
+			"overpopulate",
+			"populous",
+			"side ef",
+			"counterfoil",
+			"twist",
+			"twist of fate",
+			"admittedly",
+			"говоря",
+			"13008",
+			"banned",
+			"tetra",
+			"tet",
+			"CompoundDomain",
+			"ReadCompoundDomains",
+			"printDomains",
 			"snort",
-			"ordeal",
-			"sensory",
-			"poignant",
-			"squal",
-			"subdue",
-			"defeat",
-			"suppress",
-			"extinguish",
-			"subdued",
-			"secondary",
-			"PROC_DIR",
-			"SIGNAL_DIR",
-			"libs",
-			"DETECTORCORE_DIR",
-			"bypass",
-			"circumvent",
-			"Michael",
-			"stock",
-			"engross",
-			"care",
-			"bloat",
-			"stubborn",
-			"lizard",
-			"inward",
-			"hint",
-			"signal",
-			"When a person isproficient at something, they can do it well.",
-			"finally",
-			"If something happens finally, it happens after a longtime or at the end.",
-			"prodigal",
-			"extravagant",
-			"profligate",
-			"generous",
-			"prodig",
-			"convict",
-			"prosecute",
-			"indict",
-			"enhance",
-			"harmonize",
-			"enhance",
-			"namely",
-			"If something happens presently, it is happening right now.",
-			"A plague is a serious disease that quickly spreads to many people.",
-			"tactic",
-			"A birthplace is a place where a person is born or where something started.",
-			"citi",
-			"cure",
-			"heal",
-			"corps",
-			"corpse",
-			"barley is a grain that is used for animal feed, health food and beer.",
-			"assumption",
-			"A species is a type of plant or animal.",
-			"camb",
-			"chart",
-			"To withhold something is to not give it to someone.",
-			"peregrine",
-			"A predator is an animal that kills and eats other animals.",
-			"To regulate something is to control how it happens.\n",
-			"A mammal is an animal that usually has hair and is not born from an egg.",
-			"A genome is the collection of all the genes in a living thing.",
-			"If something is genetic, it is related to the genes in one’s body.",
-			"cause",
-			"evolve",
-			"contradict",
-			"surfeit",
-			"sentence",
-			"To infect someone means to give them an illness.",
-			"infect",
-			"To infect someone means to give them an illness.",
-			"indifferent",
-			"apathetic",
-			"peas are a vegetable that is small, round and green.",
-			"соглашени",
-			"russia",
-			"abrakadabra"
+			"downright",
+			"upright",
+			"eeri",
+			"brood",
+			"intelligible",
+			"parry",
+			"counter",
+			"overrun",
+			"),",
+			"\"",
+			"\\n",
+			"issuance",
+			"issue",
+			"upsurge",
+			"resurgence",
+			"tight",
+			"snuggle",
+			"snugle",
+			"клуб",
+			"snuggle",
+			"cozy",
+			"cosy",
+			"temper",
+			"caution",
+			"discrete",
+			"asta1avista@mail.ru",
+			"slick",
+			"veracity",
+			"upshot",
+			"sequester",
+			"seize",
+			"impound",
+			"persuasive",
+			"pressurize",
+			"oblige",
+			"pressure",
+			"pressurize",
+			"coerce",
+			"portend",
+			"omen",
+			"announce",
+			"The president's speech heralds a new era in foreign policy.",
+			"harbinger",
+			"niggling",
+			"petty",
+			"minor",
+			"negligible",
+			"discord",
+			"feud",
+			"незначительный",
+			"сомнен",
+			"leaflet",
+			"engender",
+			"arduous",
+			"testament",
+			"testify",
+			"indicative",
+			"smooth",
+			"smoothly",
+			"fluff",
+			"in the dark",
+			"up the wall",
+			"mediate",
+			"hinder",
+			"conspicuous",
+			"indicative",
+			"acquisitive",
+			"acquisit",
+			"meticulo",
+			"размещение",
+			"расположение",
+			"mongo",
+			"miserable",
+			"dismal",
+			"gloomy",
+			"dismal",
+			"petty",
+			"concerted",
+			"concert",
+			"liaise",
+			"canton",
+			"scaffold",
+			"renowned",
+			"world-famous",
+			"apprehend",
+			"abominable",
+			"capstone",
+			"incident",
+			"incidence",
+			"concede",
+			"succumb",
+			"yield",
+			"concede",
+			"tink",
+			"19609",
+			"fringe",
+			"desirable",
+			"exterminate",
+			"eradicate",
+			"uproot",
+			"eradicate"
 		],
 		"highlight": true,
 		"in_selection": false,
-		"preserve_case": false,
+		"preserve_case": true,
 		"regex": false,
 		"replace_history":
 		[
@@ -390,88 +377,30 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/acenter.conf/sad.geo.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								862,
-								862
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/run/user/1000/gvfs/sftp:host=jb,user=root/home/at/sdr.silok_model/geo.ini",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5563,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1835,
-								1835
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 585.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/home/pheodor/Private/xx.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 79721,
+						"buffer_size": 83071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11266,
-								11266
+								32775,
+								32775
 							]
 						],
 						"settings":
@@ -481,352 +410,66 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1902.0,
+						"translation.y": 12605.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
+					"file": "/home/pheodor/Work/dsp/tci6614ku/Main/GsmMain/Source/fpga_iface.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 101,
+						"buffer_size": 2179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								56,
-								56
+								390,
+								390
 							]
 						],
 						"settings":
 						{
-							"auto_name": "4fccab7d fix-[1091]: fix getResult duplicates remo",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "vocab/animals",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2563,
-								2563
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 522.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "vocab/plants",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								297,
-								297
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "vocab/food",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1191,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								511,
-								511
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "vocab/body",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "vocab/med",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3054,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1198,
-								1198
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "vocab/idioms",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 72053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								70995,
-								70995
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 18475.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "vocab/words",
+					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 742954,
+						"buffer_size": 1738,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								579443,
-								579443
+								162,
+								162
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"word_wrap": false
+							"auto_name": "16.09.2021",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 66770.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/home/pheodor/Private/Eng/Vocabulary/words-TOEFL",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 94323,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								114,
-								114
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/home/pheodor/Private/Eng/Vocabulary/phrases",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 123,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								123,
-								123
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/home/pheodor/Private/Eng/Vocabulary/plenty",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7251,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								938,
-								938
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/home/pheodor/Private/Eng/Skyeng/essay1.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2328,
-								2328
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
 					"type": "text"
 				}
 			]
@@ -834,7 +477,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -863,6 +506,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 162.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -871,7 +518,7 @@
 	"project": "english.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
